@@ -19,7 +19,7 @@ install:
 
 script:
   - yarn run test --watch=false
-  - ng build --aot --prod --project mjaox
+  - ng build --aot --prod --project mjaox-mjaox
 
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN

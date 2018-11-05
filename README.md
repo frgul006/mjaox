@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
 
+# Build Status
+
+[![Build Status](https://travis-ci.com/frgul006/mjaox.svg?branch=develop)](https://travis-ci.com/frgul006/mjaox)
+
 ## Nrwl Extensions for Angular (Nx)
 
 <a href="https://nrwl.io/nx"><img src="https://preview.ibb.co/mW6sdw/nx_logo.png"></a>
