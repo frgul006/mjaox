@@ -2,7 +2,131 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "mjaox-mjaox": {
+      "root": "apps/mjaox/mjaox/",
+      "sourceRoot": "apps/mjaox/mjaox/src",
+      "projectType": "application",
+      "prefix": "yarn",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mjaox/mjaox",
+            "index": "apps/mjaox/mjaox/src/index.html",
+            "main": "apps/mjaox/mjaox/src/main.ts",
+            "polyfills": "apps/mjaox/mjaox/src/polyfills.ts",
+            "tsConfig": "apps/mjaox/mjaox/tsconfig.app.json",
+            "assets": [
+              "apps/mjaox/mjaox/src/favicon.ico",
+              "apps/mjaox/mjaox/src/assets"
+            ],
+            "styles": [
+              "apps/mjaox/mjaox/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mjaox/mjaox/src/environments/environment.ts",
+                  "with": "apps/mjaox/mjaox/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mjaox-mjaox:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mjaox-mjaox:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mjaox-mjaox:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mjaox/mjaox/tsconfig.app.json",
+              "apps/mjaox/mjaox/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mjaox/mjaox/jest.config.js",
+            "tsConfig": "apps/mjaox/mjaox/tsconfig.spec.json",
+            "setupFile": "apps/mjaox/mjaox/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mjaox-mjaox-e2e": {
+      "root": "apps/mjaox/mjaox-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/mjaox/mjaox-e2e/cypress.json",
+            "tsConfig": "apps/mjaox/mjaox-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mjaox-mjaox:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mjaox-mjaox:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -10,5 +134,6 @@
     },
     "defaultCollection": "@nrwl/schematics",
     "packageManager": "yarn"
-  }
+  },
+  "defaultProject": "mjaox-mjaox"
 }
