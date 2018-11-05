@@ -1,0 +1,31 @@
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - '10'
+
+branches:
+  only:
+    - develop
+    - master
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - yarn
+
+script:
+  - yarn run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - yarn run e2e
+  - ng build --aot --prod --project mjaox
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
