@@ -4,3 +4,11 @@
 
 # Typescript v1 declaration files
 typings/
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
