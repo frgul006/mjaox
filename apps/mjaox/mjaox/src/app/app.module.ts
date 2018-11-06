@@ -9,6 +9,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { environment } from '../environments/environment';
+import { MjaoxButtonModule, MjaoxUiModule } from '@mjaox/shared/mjaox-ui';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,9 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase, 'Mjaox'),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features,
+    MjaoxUiModule,
+    MjaoxButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
