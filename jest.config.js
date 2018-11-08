@@ -1,5 +1,5 @@
 module.exports = {
-  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
+  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)', '!**/*-e2e/**'],
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular/preprocessor.js'
   },
