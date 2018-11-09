@@ -21,11 +21,10 @@ script:
   - yarn run test --watch=false
   - ng build --aot --prod --project mjaox-mjaox
 
-after_success:
-  deploy:
-    provider: firebase
-    token:
-      secure: $FIREBASE_TOKEN
+deploy:
+  provider: firebase
+  token:
+    secure: $FIREBASE_TOKEN
 
 notifications:
   email:
