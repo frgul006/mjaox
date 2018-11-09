@@ -7,7 +7,7 @@
       "root": "apps/mjaox/mjaox/",
       "sourceRoot": "apps/mjaox/mjaox/src",
       "projectType": "application",
-      "prefix": "yarn",
+      "prefix": "mjaox",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -27,7 +27,9 @@
               "apps/mjaox/mjaox/src/assets"
             ],
             "styles": [
-              "apps/mjaox/mjaox/src/styles.scss"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "apps/mjaox/mjaox/src/styles.scss",
+              "apps/mjaox/mjaox/src/themes.scss"
             ],
             "scripts": []
           },
@@ -36,7 +38,8 @@
               "fileReplacements": [
                 {
                   "replace": "apps/mjaox/mjaox/src/environments/environment.ts",
-                  "with": "apps/mjaox/mjaox/src/environments/environment.prod.ts"
+                  "with":
+                    "apps/mjaox/mjaox/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -82,9 +85,7 @@
               "apps/mjaox/mjaox/tsconfig.app.json",
               "apps/mjaox/mjaox/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -119,9 +120,33 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "shared-mjaox-ui": {
+      "root": "libs/shared/mjaox-ui",
+      "sourceRoot": "libs/shared/mjaox-ui/src",
+      "projectType": "library",
+      "prefix": "mjaox",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/mjaox-ui/tsconfig.lib.json",
+              "libs/shared/mjaox-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/mjaox-ui/jest.config.js",
+            "tsConfig": "libs/shared/mjaox-ui/tsconfig.spec.json",
+            "setupFile": "libs/shared/mjaox-ui/src/test-setup.ts"
           }
         }
       }

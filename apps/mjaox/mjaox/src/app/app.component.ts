@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'yarn-root',
+  selector: 'mjaox-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

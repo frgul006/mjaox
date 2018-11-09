@@ -1,5 +1,5 @@
 {
-  "npmScope": "yarn",
+  "npmScope": "mjaox",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -9,12 +9,13 @@
   },
   "projects": {
     "mjaox-mjaox": {
-      "tags": [
-        "app"
-      ]
+      "tags": ["app"]
     },
     "mjaox-mjaox-e2e": {
       "tags": []
+    },
+    "shared-mjaox-ui": {
+      "tags": ["ui shared"]
     }
   }
 }
