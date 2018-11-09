@@ -42,6 +42,7 @@
     "@ngrx/router-store": "6.1.0",
     "@ngrx/store": "6.1.0",
     "@nrwl/nx": "7.0.1",
+    "bootstrap": "^4.1.3",
     "core-js": "^2.5.4",
     "firebase": "^5.5.7",
     "hammerjs": "^2.0.8",

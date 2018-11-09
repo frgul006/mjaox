@@ -27,6 +27,7 @@
               "apps/mjaox/mjaox/src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "apps/mjaox/mjaox/src/styles.scss",
               "apps/mjaox/mjaox/src/themes.scss"
             ],
