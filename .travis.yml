@@ -1,8 +1,6 @@
 dist: trusty
 sudo: false
 
-x
-
 language: node_js
 node_js:
   - '10'
@@ -23,10 +21,11 @@ script:
   - yarn run test --watch=false
   - ng build --aot --prod --project mjaox-mjaox
 
-deploy:
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN
+after_success:
+  deploy:
+    provider: firebase
+    token:
+      secure: $FIREBASE_TOKEN
 
 notifications:
   email:
