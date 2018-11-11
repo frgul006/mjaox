@@ -1,0 +1,43 @@
+.mjaox-toolbar {
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.mjaox-toolbar__spacer {
+  flex-grow: 1;
+}
+
+.mjaox-toolbar__links {
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+  }
+
+  .mjaox-toolbar__link {
+    min-width: 110px;
+    margin-bottom: 10px;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      // color: #fff;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.mjaox-toolbar__text {
+  margin-left: 0.5rem;
+}

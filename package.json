@@ -57,8 +57,6 @@
     "@ngrx/store-devtools": "6.1.0",
     "@nrwl/builders": "7.0.1",
     "@nrwl/schematics": "7.0.1",
-    "@types/jasmine": "~2.8.6",
-    "@types/jasminewd2": "~2.0.3",
     "@types/jest": "^23.0.0",
     "@types/jquery": "3.3.6",
     "@types/node": "~8.9.4",

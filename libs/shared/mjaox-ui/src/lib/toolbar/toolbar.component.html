@@ -1,0 +1,14 @@
+<div class="mjaox-toolbar mat-elevation-z8">
+  <div class="mjaox-toolbar__logo"><img src="/assets/logo.svg" /></div>
+  <div class="mjaox-toolbar__spacer"></div>
+  <nav class="mjaox-toolbar__links">
+    <ul>
+      <li class="mjaox-toolbar__link" *ngFor="let link of options.links">
+        <a [routerLink]="link.route" mat-raised-button>
+          <mat-icon aria-hidden="true">{{ link.icon }}</mat-icon>
+          <span class="mjaox-toolbar__text">{{ link.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
