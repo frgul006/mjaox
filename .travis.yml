@@ -21,6 +21,7 @@ script:
   - ng build --aot --prod --project mjaox-mjaox --output-path dist
 
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
