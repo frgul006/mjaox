@@ -18,8 +18,7 @@ install:
   - yarn
 
 script:
-  - yarn run test --watch=false
-  - ng build --aot --prod --project mjaox-mjaox
+  - ng build --aot --prod --project mjaox-mjaox --output-path dist
 
 deploy:
   provider: firebase
