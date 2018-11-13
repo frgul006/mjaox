@@ -21,6 +21,7 @@ export interface Tag {
 export interface Post {
   id: string;
   title: string;
+  prettyurl: string;
   author: Author;
   summary: string;
   image: Image;

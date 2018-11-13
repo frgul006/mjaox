@@ -6,6 +6,6 @@ import {
 
 export const routes = [
   { path: '', component: BlogPageComponent },
-  { path: 'details:id', component: BlogDetailsPageComponent },
+  { path: 'post/:id', component: BlogDetailsPageComponent },
   { path: 'about', component: AboutPageComponent }
 ];

@@ -11,11 +11,9 @@ import { MjaoxToolbarOptions, MjaoxToolbarLink } from '@mjaox/shared/mjaox-ui';
 export class AppComponent {
   title = 'mjaox-mjaox';
 
-  items: Observable<any[]>;
   toolbarOptions: MjaoxToolbarOptions;
 
-  constructor(db: AngularFirestore) {
-    this.items = db.collection('items').valueChanges();
+  constructor() {
     this.toolbarOptions = {
       links: [
         {

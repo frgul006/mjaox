@@ -12,7 +12,11 @@
               ')'
           }"
         ></div>
-        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-title
+          ><a [routerLink]="'/post/' + post.prettyurl">{{
+            post.title
+          }}</a></mat-card-title
+        >
         <mat-card-subtitle
           >{{ post.author.firstname }}
           {{ post.author.lastname }}</mat-card-subtitle
