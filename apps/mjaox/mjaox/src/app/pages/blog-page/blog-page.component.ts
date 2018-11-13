@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { GraphCMSService } from '../../services/graphcms.service';
+import { Post } from '../../services/graphcms.model';
 
 @Component({
   selector: 'mjaox-blog-page',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-page.component.scss']
 })
 export class BlogPageComponent implements OnInit {
+  posts: Observable<Post[]>;
 
-  constructor() { }
+  constructor(private graphSvc: GraphCMSService) {}
 
   ngOnInit() {
+    this.posts = this.graphSvc.getBlogPosts();
   }
-
 }

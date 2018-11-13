@@ -12,6 +12,8 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { PagesModule } from './pages';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +28,9 @@ import { PagesModule } from './pages';
     AngularFireStorageModule, // imports firebase/storage only needed for storage features,
     MjaoxButtonModule,
     MjaoxToolbarModule,
-    PagesModule
+    PagesModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
