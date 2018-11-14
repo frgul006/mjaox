@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { map, first } from 'rxjs/operators';
+import { BlogPost, BlogPosts, BlogPostsResponse } from './graphcms.queries';
+import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Post } from './graphcms.model';
-import { Observable, of } from 'rxjs';
-import { BlogPosts, BlogPostsResponse, BlogPost } from './graphcms.queries';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GraphCMSService {
-  private blogPost: Observable<Post>;
 
   constructor(private apollo: Apollo) {}
 
