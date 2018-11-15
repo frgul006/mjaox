@@ -23,11 +23,6 @@ import {
 } from 'rxjs/operators';
 import { MjaoxToolbarOptions } from './toolbar-options.model';
 
-enum VisibilityState {
-  Visible = 'visible',
-  Hidden = 'hidden'
-}
-
 enum Direction {
   Up = 'Up',
   Down = 'Down'
@@ -40,14 +35,8 @@ enum Direction {
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('toggle', [
-      state(
-        VisibilityState.Hidden,
-        style({ opacity: 0, transform: 'translateY(-100%)' })
-      ),
-      state(
-        VisibilityState.Visible,
-        style({ opacity: 1, transform: 'translateY(0)' })
-      ),
+      state('hidden', style({ opacity: 0, transform: 'translateY(-100%)' })),
+      state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
       transition('* => *', animate('200ms ease-in'))
     ])
   ]
@@ -61,8 +50,8 @@ export class ToolbarComponent implements AfterViewInit {
   private isVisible = true;
 
   @HostBinding('@toggle')
-  get toggle(): VisibilityState {
-    return this.isVisible ? VisibilityState.Visible : VisibilityState.Hidden;
+  get toggle(): string {
+    return this.isVisible ? 'visible' : 'hidden';
   }
   ngAfterViewInit() {
     const scroll$ = fromEvent(window, 'scroll').pipe(
