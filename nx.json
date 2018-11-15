@@ -9,13 +9,22 @@
   },
   "projects": {
     "mjaox-mjaox": {
-      "tags": ["app"]
+      "tags": [
+        "app"
+      ]
     },
     "mjaox-mjaox-e2e": {
       "tags": []
     },
     "shared-mjaox-ui": {
-      "tags": ["ui shared"]
+      "tags": [
+        "ui shared"
+      ]
+    },
+    "shared-mjaox-model": {
+      "tags": [
+        "shared model"
+      ]
     }
   }
 }

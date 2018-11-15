@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-header>
+    <div
+      class="mjaox-blog-post__image"
+      mat-card-avatar
+      [ngStyle]="{
+        'background-image':
+          'url(https://media.graphcms.com/resize=w:120/compress/' +
+          post?.author?.profileimage?.handle +
+          ')'
+      }"
+    ></div>
+    <mat-card-title
+      ><a [routerLink]="'/post/' + post?.prettyurl">{{
+        post?.title
+      }}</a></mat-card-title
+    >
+    <mat-card-subtitle
+      >{{ post?.author?.firstname }}
+      {{ post?.author?.lastname }}</mat-card-subtitle
+    >
+  </mat-card-header>
+  <img
+    *ngIf="post?.image !== null"
+    mat-card-image
+    [src]="
+      'https://media.graphcms.com/resize=w:500/quality=value:70/compress/' +
+      post?.image?.handle
+    "
+  />
+  <mat-card-content>
+    <p class="mjaox-paragraph">{{ post?.summary }}</p>
+  </mat-card-content>
+  <mat-card-actions *ngIf="post?.tags.length > 0">
+    <mjaox-ui-tags [tags]="post?.tags"></mjaox-ui-tags>
+  </mat-card-actions>
+</mat-card>

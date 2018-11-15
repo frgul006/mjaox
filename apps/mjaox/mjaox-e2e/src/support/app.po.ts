@@ -1,3 +1,3 @@
 /// <reference types="cypress" />
 
-export const getGreeting = () => cy.get('h1');
+export const getLogo = () => cy.get('.mjaox-toolbar__logo');

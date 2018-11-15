@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Post } from '@mjaox/shared/mjaox-model';
+import { Observable } from 'rxjs';
 import { GraphCMSService } from '../../services/graphcms.service';
-import { Post } from '../../services/graphcms.model';
 
 @Component({
   selector: 'mjaox-blog-page',

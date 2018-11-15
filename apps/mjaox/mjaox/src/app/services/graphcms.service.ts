@@ -3,13 +3,12 @@ import { BlogPost, BlogPosts, BlogPostsResponse } from './graphcms.queries';
 import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Post } from './graphcms.model';
+import { Post } from '@mjaox/shared/mjaox-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GraphCMSService {
-
   constructor(private apollo: Apollo) {}
 
   getBlogPosts(): Observable<Post[]> {

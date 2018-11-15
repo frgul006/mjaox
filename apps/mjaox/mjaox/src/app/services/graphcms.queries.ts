@@ -1,5 +1,5 @@
+import { Post } from '@mjaox/shared/mjaox-model';
 import gql from 'graphql-tag';
-import { Post } from './graphcms.model';
 
 export interface BlogPostsResponse {
   posts: Post[];
@@ -38,11 +38,15 @@ export const BlogPost = gql`
       author {
         firstname
         lastname
+        description
+        twitter
+        github
         profileimage {
           handle
         }
       }
       summary
+      content
       image {
         handle
       }

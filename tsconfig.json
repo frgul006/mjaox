@@ -19,6 +19,9 @@
     "paths": {
       "@mjaox/shared/mjaox-ui": [
         "libs/shared/mjaox-ui/src/index.ts"
+      ],
+      "@mjaox/shared/mjaox-model": [
+        "libs/shared/mjaox-model/src/index.ts"
       ]
     }
   },

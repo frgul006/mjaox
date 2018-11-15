@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 
-import { getGreeting } from '../support/app.po';
+import { getLogo } from '../support/app.po';
 
-describe('Hello Nx', () => {
+describe('Mjaox', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    getGreeting().contains('Welcome to mjaox-mjaox!');
+  it('should display logo', () => {
+    getLogo().should('exist');
   });
 });
