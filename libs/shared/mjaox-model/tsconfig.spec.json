@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc/libs/shared/mjaox-model",
+    "module": "commonjs",
+    "types": ["jest", "node"]
+  },
+  "files": ["../../../jest/setupJest.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
+}

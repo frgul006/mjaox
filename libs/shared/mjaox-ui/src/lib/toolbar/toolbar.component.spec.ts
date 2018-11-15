@@ -1,5 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ToolbarComponent } from './toolbar.component';
 
 describe('ToolbarComponent', () => {
@@ -8,9 +10,9 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToolbarComponent ]
-    })
-    .compileComponents();
+      imports: [NoopAnimationsModule, RouterTestingModule, MatIconModule],
+      declarations: [ToolbarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

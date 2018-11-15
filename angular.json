@@ -28,10 +28,16 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "apps/mjaox/mjaox/src/reset.scss",
               "apps/mjaox/mjaox/src/styles.scss",
               "apps/mjaox/mjaox/src/themes.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-javascript.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,7 +99,7 @@
           "options": {
             "jestConfig": "apps/mjaox/mjaox/jest.config.js",
             "tsConfig": "apps/mjaox/mjaox/tsconfig.spec.json",
-            "setupFile": "apps/mjaox/mjaox/src/test-setup.ts"
+            "setupFile": "jest/setupJest.ts"
           }
         }
       }
@@ -146,7 +152,32 @@
           "options": {
             "jestConfig": "libs/shared/mjaox-ui/jest.config.js",
             "tsConfig": "libs/shared/mjaox-ui/tsconfig.spec.json",
-            "setupFile": "libs/shared/mjaox-ui/src/test-setup.ts"
+            "setupFile": "jest/setupJest.ts"
+          }
+        }
+      }
+    },
+    "shared-mjaox-model": {
+      "root": "libs/shared/mjaox-model",
+      "sourceRoot": "libs/shared/mjaox-model/src",
+      "projectType": "library",
+      "prefix": "mjaox",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/mjaox-model/tsconfig.lib.json",
+              "libs/shared/mjaox-model/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/shared/mjaox-model/jest.config.js",
+            "tsConfig": "libs/shared/mjaox-model/tsconfig.spec.json"
           }
         }
       }

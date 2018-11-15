@@ -1,25 +1,32 @@
-import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
+import { BlogPost, BlogPosts, BlogPostsResponse } from './graphcms.queries';
 import { map } from 'rxjs/operators';
-import { Post } from './graphcms.model';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BlogPosts, BlogPostsResponse } from './graphcms.queries';
+import { Post } from '@mjaox/shared/mjaox-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GraphCMSService {
-  private blogPosts: Observable<Post[]>;
+  constructor(private apollo: Apollo) {}
 
-  constructor(private apollo: Apollo) {
-    this.blogPosts = this.apollo
+  getBlogPosts(): Observable<Post[]> {
+    return this.apollo
       .watchQuery<BlogPostsResponse>({
         query: BlogPosts
       })
       .valueChanges.pipe(map(changes => changes.data.posts as Post[]));
   }
 
-  getBlogPosts() {
-    return this.blogPosts;
+  getBlogPostByPrettyUrl(prettyurl: string): Observable<Post> {
+    return this.apollo
+      .watchQuery<BlogPostsResponse>({
+        query: BlogPost,
+        variables: {
+          prettyurl
+        }
+      })
+      .valueChanges.pipe(map(changes => changes.data.posts[0]));
   }
 }

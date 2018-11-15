@@ -1,5 +1,5 @@
+import { Post } from '@mjaox/shared/mjaox-model';
 import gql from 'graphql-tag';
-import { Post } from './graphcms.model';
 
 export interface BlogPostsResponse {
   posts: Post[];
@@ -8,7 +8,9 @@ export interface BlogPostsResponse {
 export const BlogPosts = gql`
   query {
     posts {
+      id
       title
+      prettyurl
       author {
         firstname
         lastname
@@ -17,6 +19,34 @@ export const BlogPosts = gql`
         }
       }
       summary
+      image {
+        handle
+      }
+      tags {
+        title
+      }
+    }
+  }
+`;
+
+export const BlogPost = gql`
+  query($prettyurl: String!) {
+    posts(where: { prettyurl: $prettyurl }) {
+      id
+      title
+      prettyurl
+      author {
+        firstname
+        lastname
+        description
+        twitter
+        github
+        profileimage {
+          handle
+        }
+      }
+      summary
+      content
       image {
         handle
       }

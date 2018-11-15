@@ -5,12 +5,8 @@
     "rootDir": ".",
     "module": "commonjs",
     "target": "es5",
-    "types": [
-      "jasmine",
-      "node"
-    ]
+    "types": ["jest", "node"]
   },
-  "include": [
-    "**/*.ts"
-  ]
+  "include": ["**/*.ts"],
+  "exclude": ["schematics/**/*.spec.ts", "schematics/**/files/**/*"]
 }

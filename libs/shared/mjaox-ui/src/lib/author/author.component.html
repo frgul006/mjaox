@@ -1,0 +1,36 @@
+<mat-card class="mjaox-ui-author">
+  <mat-card-header>
+    <mat-card-title>{{
+      author?.firstname + ' ' + author?.lastname
+    }}</mat-card-title>
+    <mat-card-subtitle>
+      <a
+        [href]="
+          'https://twitter.com/' + author?.twitter + '?ref_src=twsrc%5Etfw'
+        "
+        class="twitter-follow-button"
+        data-show-count="false"
+        >Follow {{ author?.twitter }}</a
+      ><script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      ></script>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img
+    *ngIf="author?.profileimage?.handle"
+    mat-card-image
+    [src]="
+      'https://media.graphcms.com/resize=w:500/quality=value:70/compress/' +
+      author?.profileimage?.handle
+    "
+    [alt]="'Photo of ' + author?.firstname + ' ' + author?.lastname"
+  />
+  <mat-card-content>
+    <p>{{ author?.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button> <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
