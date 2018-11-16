@@ -53,6 +53,17 @@ export const BlogPost = gql`
       tags {
         title
       }
+      links {
+        title
+        url
+        description
+      }
+      uploads {
+        updatedAt
+        handle
+        fileName
+        mimeType
+      }
     }
   }
 `;

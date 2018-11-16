@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { MjaoxToolbarOptions, MjaoxToolbarLink } from '@mjaox/shared/mjaox-ui';
+import { MjaoxToolbarLink, MjaoxToolbarOptions } from '@mjaox/shared/mjaox-ui';
 
 @Component({
   selector: 'mjaox-root',
@@ -20,12 +18,12 @@ export class AppComponent {
           icon: 'code',
           label: 'Blog',
           route: ''
-        } as MjaoxToolbarLink,
-        {
-          icon: 'info',
-          label: 'About',
-          route: '/about'
         } as MjaoxToolbarLink
+        // {
+        //   icon: 'info',
+        //   label: 'About',
+        //   route: '/about'
+        // } as MjaoxToolbarLink
       ]
     };
   }

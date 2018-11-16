@@ -1,29 +1,10 @@
-<div class="mjaox d-flex flex-grow-1 flex-column bd-highlight">
-  <mjaox-toolbar
-    class="d-flex bd-highlight mb-3"
+<div class="mjaox d-flex flex-grow-1 flex-column">
+  <mjaox-ui-toolbar
+    class="d-flex mb-3"
     [options]="toolbarOptions"
-  ></mjaox-toolbar>
-  <div class="mjaox-body d-flex bd-highlight flex-grow-1 container-fluid">
+  ></mjaox-ui-toolbar>
+  <div class="mjaox-body d-flex flex-grow-1 container-fluid">
     <router-outlet></router-outlet>
   </div>
-  <div class="mjaox-footer mat-elevation-z8">
-    <div class="row">
-      <div class="col">
-        <div class="mjaox-footer__media mb-3">
-          <img class="mjaox-footer__icon" src="/assets/twitter.svg" />
-          <span class="mjaox-footer__text">@frgul006</span>
-        </div>
-        <div class="mjaox-footer__media mb-3">
-          <img class="mjaox-footer__icon" src="/assets/github-logo.svg" />
-          <span class="mjaox-footer__text">github.com/frgul006</span>
-        </div>
-        <div class="mjaox-footer__media mb-3">
-          <img
-            class="mjaox-footer__icon"
-            src="/assets/linkedin-logo-button.svg"
-          /><span class="mjaox-footer__text">LinkedIn</span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <mjaox-ui-footer></mjaox-ui-footer>
 </div>

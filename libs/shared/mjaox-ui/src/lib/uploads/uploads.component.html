@@ -1,0 +1,8 @@
+<div *ngFor="let upload of uploads" class="d-flex align-items-center">
+  <div><mjaox-ui-file-icon [file]="upload"></mjaox-ui-file-icon></div>
+  <div>
+    <a [href]="'https://media.graphcms.com/' + upload.handle">{{
+      upload.fileName
+    }}</a>
+  </div>
+</div>

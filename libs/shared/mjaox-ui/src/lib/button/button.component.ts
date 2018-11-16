@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mjaox-button',
+  selector: 'mjaox-ui-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })

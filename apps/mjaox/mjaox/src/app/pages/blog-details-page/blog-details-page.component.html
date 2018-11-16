@@ -4,14 +4,23 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-7">
     <markdown [data]="(post$ | async)?.content"></markdown>
   </div>
-  <div class="col-md-4">
+  <div class="offset-md-1 col-md-4">
     <div class="mt-2 mb-4">
+      <h2>Tags</h2>
       <mjaox-ui-tags [tags]="(post$ | async)?.tags"></mjaox-ui-tags>
     </div>
-    <div class="mt-4 mb-4">
+    <div class="mt-2 mb-4">
+      <h2>Uploads</h2>
+      <mjaox-ui-uploads [uploads]="(post$ | async)?.uploads"></mjaox-ui-uploads>
+    </div>
+    <div class="mt-2 mb-4">
+      <h2>Links</h2>
+      <mjaox-ui-links [links]="(post$ | async)?.links"></mjaox-ui-links>
+    </div>
+    <div class="mt-5 mb-5">
       <mjaox-ui-author [author]="(post$ | async)?.author"></mjaox-ui-author>
     </div>
   </div>
