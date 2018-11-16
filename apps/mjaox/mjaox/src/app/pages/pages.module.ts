@@ -4,7 +4,9 @@ import { RouterModule } from '@angular/router';
 import {
   SharedMjaoxUiAuthorModule,
   SharedMjaoxUiBlogPostModule,
-  SharedMjaoxUiTagsModule
+  SharedMjaoxUiLinksModule,
+  SharedMjaoxUiTagsModule,
+  SharedMjaoxUiUploadsModule
 } from '@mjaox/shared/mjaox-ui';
 import { MarkdownModule } from 'ngx-markdown';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -24,6 +26,8 @@ const COMPONENTS = [
     SharedMjaoxUiBlogPostModule,
     SharedMjaoxUiTagsModule,
     SharedMjaoxUiAuthorModule,
+    SharedMjaoxUiLinksModule,
+    SharedMjaoxUiUploadsModule,
     MarkdownModule.forChild()
   ],
   declarations: [...COMPONENTS],

@@ -1,7 +1,11 @@
 module.exports = {
   preset: 'jest-preset-angular',
   setupTestFrameworkScriptFile: '<rootDir>/jest/setupJest.ts',
-  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)', '!**/*-e2e/**'],
+  testMatch: [
+    '**/+(*.)+(spec|test).+(ts|js)?(x)',
+    '!**/*-e2e/**',
+    '!**/schematics/**/files/**'
+  ],
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular/preprocessor.js',
     '^.+\\.js$': 'babel-jest'

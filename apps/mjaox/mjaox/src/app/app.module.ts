@@ -7,7 +7,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { MjaoxToolbarModule } from '@mjaox/shared/mjaox-ui';
+import {
+  SharedMjaoxUiFooterModule,
+  SharedMjaoxUiToolbarModule
+} from '@mjaox/shared/mjaox-ui';
 import { NxModule } from '@nrwl/nx';
 import { MarkdownModule } from 'ngx-markdown';
 import { environment } from '../environments/environment';
@@ -28,7 +31,8 @@ import { PagesModule } from './pages';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features,
-    MjaoxToolbarModule,
+    SharedMjaoxUiToolbarModule,
+    SharedMjaoxUiFooterModule,
     PagesModule,
     GraphQLModule,
     HttpClientModule

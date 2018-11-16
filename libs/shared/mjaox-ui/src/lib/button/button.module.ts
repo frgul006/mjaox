@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule } from '@angular/material';
 import { ButtonComponent } from './button.component';
 
@@ -8,4 +8,4 @@ import { ButtonComponent } from './button.component';
   declarations: [ButtonComponent],
   exports: [ButtonComponent]
 })
-export class MjaoxButtonModule {}
+export class SharedMjaoxUiButtonModule {}

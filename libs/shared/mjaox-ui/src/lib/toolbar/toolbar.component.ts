@@ -29,7 +29,7 @@ enum Direction {
 }
 
 @Component({
-  selector: 'mjaox-toolbar',
+  selector: 'mjaox-ui-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
