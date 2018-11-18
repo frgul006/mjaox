@@ -49,6 +49,6 @@ export class BlogPageComponent implements OnInit {
   constructor(private graphSvc: GraphCMSService) {}
 
   ngOnInit() {
-    this.posts$ = this.graphSvc.getBlogPosts();
+    this.posts$ = this.graphSvc.getAllPosts();
   }
 }
