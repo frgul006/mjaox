@@ -1,5 +1,13 @@
 # Mjaox
 
+## Build Status
+
+develop
+[![Build Status](https://travis-ci.com/frgul006/mjaox.svg?branch=develop)](https://travis-ci.com/frgul006/mjaox)
+
+master
+[![Build Status](https://travis-ci.com/frgul006/mjaox.svg?branch=master)](https://travis-ci.com/frgul006/mjaox)
+
 ## Local Dev Setup
 
 ```node
@@ -15,7 +23,6 @@ yarn affected:lint origin/develop HEAD
 ```
 
 ## Test
-
 
 ```node
 yarn affected:test origin/develop HEAD

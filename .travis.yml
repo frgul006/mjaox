@@ -20,11 +20,20 @@ install:
 script:
   - ng build --aot --prod --project mjaox-mjaox --output-path dist
 
+script:
+  - ng e2e
+
 deploy:
   skip_cleanup: true
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
+
+addons:
+  browserstack:
+    username: 'fredrikgullberg2'
+    access_key:
+      secure: 'Upzbku8DNOtrJCgu5luPVQ3lX2UdcT9KXWMfW8oGl5saHTutS0fnaUkbDLMdwkUa5aI3/Qnn1WF8pDxmOxq3BdD2iTaPr9IxF3Ts0Ry+nvIoRWBNeqczXrdJtoL4fBkxkIRtrYeeanAYI+x9ni7/GpJq3VmzAZMqpMR0aX8jdxGeWtRyrvHbn/mwbVpeLw9d1cJoa+ojS3PLOrEPKmfWIB8XqrUumKDo7rsblf04tObYhECDKPqZQmEA47fHxFo0nBDB4qNzfeDgqsI7GwBIqaS28WX5iuuKsbMHncE3KEAhpo+HcZDmhGWBswGyd36r6eaGPDfOqbOYUTxwcLfmXEfq92zkMJq8tnzAkj5HpXy31SsPADls+CVZ6T8cqOoRubden9H9+ZnHOqlnJI49+c9ESP9iG+GFQG310Ti3pXrMaSLyzBiJMB5Pp7yKe3vAbkYkRBdc6nK/l7ezACIlqbnp77YhuLKMn+7jQWAHhBgKQ/NVIGHXV5zBYqXTbK7hlA7o1cymdDmgiWc/7uPPlYdxOspHtliLI1jWtSYSPCps+vXx42eUUA1ckVPJ59j1hHvdrIpW3fKdOVugDY/Ppq/rXAdccpoVfEl+Vsx+FBdoqg+TCyaFgu70f8RklO6KBJ44ReSCHIefTMghO8I3Yx9mF659OJxs/I9EVSkQIYM='
 
 notifications:
   email:
