@@ -22,8 +22,18 @@ yarn global add jest @angular/cli @nrwl/schematics firebase-tools
 yarn affected:lint origin/develop HEAD
 ```
 
-## Test
+## Unit Test
 
 ```node
 yarn affected:test origin/develop HEAD
 ```
+
+## E2E
+
+```node
+yarn affected:e2e origin/develop HEAD
+```
+
+## License
+
+See the LICENSE file for license rights and limitations (MIT).
