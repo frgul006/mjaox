@@ -19,11 +19,6 @@ export class AppComponent {
           label: 'Blog',
           route: ''
         } as MjaoxToolbarLink
-        // {
-        //   icon: 'info',
-        //   label: 'About',
-        //   route: '/about'
-        // } as MjaoxToolbarLink
       ]
     };
   }

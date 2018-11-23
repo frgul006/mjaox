@@ -21,7 +21,7 @@ export class BlogDetailsPageComponent implements OnInit {
   ngOnInit() {
     this.post$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.graphSvc.getBlogPostByPrettyUrl(params.get('id'))
+        this.graphSvc.getPostByPrettyUrl(params.get('id'))
       )
     );
   }

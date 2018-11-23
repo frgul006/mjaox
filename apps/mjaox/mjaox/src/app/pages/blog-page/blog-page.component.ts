@@ -25,7 +25,7 @@ import { GraphCMSService } from '../../services/graphcms.service';
           ':enter',
           stagger('-120ms', [
             animate(
-              '200ms ease-in',
+              '240ms ease-in',
               keyframes([
                 style({ opacity: 0, transform: 'translateX(-75%)', offset: 0 }),
                 style({
@@ -49,6 +49,6 @@ export class BlogPageComponent implements OnInit {
   constructor(private graphSvc: GraphCMSService) {}
 
   ngOnInit() {
-    this.posts$ = this.graphSvc.getBlogPosts();
+    this.posts$ = this.graphSvc.getAllPosts();
   }
 }

@@ -1,35 +1,6 @@
-import { Post } from '@mjaox/shared/mjaox-model';
 import gql from 'graphql-tag';
 
-export interface BlogPostsResponse {
-  posts: Post[];
-}
-
-export const BlogPosts = gql`
-  query {
-    posts {
-      id
-      title
-      prettyurl
-      author {
-        firstname
-        lastname
-        profileimage {
-          handle
-        }
-      }
-      summary
-      image {
-        handle
-      }
-      tags {
-        title
-      }
-    }
-  }
-`;
-
-export const BlogPost = gql`
+export const getPostByPrettyUrl = gql`
   query($prettyurl: String!) {
     posts(where: { prettyurl: $prettyurl }) {
       id
