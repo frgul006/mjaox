@@ -1,41 +1,34 @@
 dist: trusty
 sudo: false
-
 language: node_js
 node_js:
   - '10'
-
 branches:
   only:
     - develop
     - master
-
 cache:
   directories:
-    - ./node_modules
-
+    - './node_modules'
 install:
   - yarn
-
-script:
-  - ng build --aot --prod --project mjaox-mjaox --output-path dist
-
 script:
   - ng e2e
-
 deploy:
   skip_cleanup: true
   provider: firebase
   token:
-    secure: $FIREBASE_TOKEN
+    secure: '$FIREBASE_TOKEN'
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+env:
+  global:
+    secure:
 
 addons:
   browserstack:
     username: 'fredrikgullberg2'
     access_key:
-      secure: 'MC8I90Lqmt7uwAjb7rVXPw7bOMZ5Eg05m6QSnQ21mFiP40VHYEqCKSEI1y68uIhValAl1LGAbgizysL6wqVnBqxGDanThnIwOwTgxZAVnap1kFu+k+BNWqrekvmARXVQAFvNoJBsKRM9jilZONPmNwCKFaZJI82sWyiIpYJcI0VNnDlwwbdyovRI4Q9POD2iTivT2Lpyi035qydgzncafoOqoOPuov83zd+di5kszteS484uZOJoUiBZuvp+5u43Ah4t1b7QCzWo/uhs0EhD9TJ85sMm2jzoBiw5xfEIWPHu4qZ88TikombvG2r4lvlSLN8awoAVD1djqJlOMZqsmh85dt2xUBRg8bUZM79O24skkc4NbfJ2cvzDdrTHpMojaofDQjjslp77yA5ZzXA0XRN/EF5sjHu1dToyPIqvM5u64m0kYVceCxn25dDav6qBc8WX/AFolXJISBV2ollAXHkeopxuYuuAkUOE1aO5GQ20wwNEMv9/iSsHrlWwfZ09BCMeb3YNx8G8Z+xA6h4e4Txx6H6kAyH4oBr83ed0owUEu1mheAN4SV8YuhWbT/0j2nhh2wfiUtApdEnPBgY/haydMHY+aCz4G2a+4n5dLeF6Mjr4/85rksVEgjHczUQAWGr+v2bdOT2GBMakhw4yCuBGnPNo9ljHDbWv4LTiaEs='
-
-notifications:
-  email:
-    on_failure: change
-    on_success: change
+      secure: 'aYXJzDL1kOVMGmCPPV8XaXy9kTAaTzoFHRSN12he6xr15H97FTL311xxzW7WlvJ7x0ySzTwOvta/PDrtFw9OIqt4V/zqWT8pwGeA8rt0hZi0ZT+WBOwAdi8ulXfreJW8IW4Ghs7CI5G4n7sMGVbyGEsux0rRyxU/B8DShFm2ti/i3/DIwECT1O/cK2+crqOw1UGdk/FyaPhvLeWBjKbfldLJ7MUhfR0w8sxhKRHig/1HLCHWafLVkbcS9LYWIoRGApkHugIKAp6aM/PnDFtTKcD4lHVeG05Dnl9bCeBjU9/D+459qa7juACSeZuELJ6MKrg/19YAvCBXz5QmYrKvAmHwHJ2ce0Sst5ekbx1yUhz23YlISIVj6TEkLOqMNeMFkaGsyWjpjJBU5mracTrMUVMP+aOpV47YJM2Q7+iZKKh5R+T1N3GmpUaGRzgpy3iOmXG0hgT3ZLecBjRI6DKnVhWeiN2HIH4KkxZf8Ig8rrd0BfA6FlvUalFH4AQymVLTl//Tn7DN+RpOeuIaHHEGdEfuxMGdzJO5db59DXDxkxwJf+oXL96fBTaE2NEOVNip9/rPR3IhdoyUcri/ObAA3K1vRt/fkyd5s1EuarIkCYJH5qFyvM7e+nfGdHfsSlXsXglcY/66UIYU/tKCa/WPWGbUE34E9EdivbPQ9ZV8XiM='
