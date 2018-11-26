@@ -1,34 +1,41 @@
 dist: trusty
+
 sudo: false
+
 language: node_js
+
 node_js:
   - '10'
+
 branches:
   only:
     - develop
     - master
+
 cache:
   directories:
-    - './node_modules'
+    - ~/.npm
+    - ~/.cache
+
 install:
   - yarn
+
 script:
+  - $(npm bin)/print-env TRAVIS
   - ng e2e
+
 deploy:
-  skip_cleanup: true
   provider: firebase
   token:
     secure: '$FIREBASE_TOKEN'
+
 notifications:
   email:
     on_failure: change
     on_success: change
-env:
-  global:
-    secure:
 
 addons:
   browserstack:
     username: 'fredrikgullberg2'
     access_key:
-      secure: 'aYXJzDL1kOVMGmCPPV8XaXy9kTAaTzoFHRSN12he6xr15H97FTL311xxzW7WlvJ7x0ySzTwOvta/PDrtFw9OIqt4V/zqWT8pwGeA8rt0hZi0ZT+WBOwAdi8ulXfreJW8IW4Ghs7CI5G4n7sMGVbyGEsux0rRyxU/B8DShFm2ti/i3/DIwECT1O/cK2+crqOw1UGdk/FyaPhvLeWBjKbfldLJ7MUhfR0w8sxhKRHig/1HLCHWafLVkbcS9LYWIoRGApkHugIKAp6aM/PnDFtTKcD4lHVeG05Dnl9bCeBjU9/D+459qa7juACSeZuELJ6MKrg/19YAvCBXz5QmYrKvAmHwHJ2ce0Sst5ekbx1yUhz23YlISIVj6TEkLOqMNeMFkaGsyWjpjJBU5mracTrMUVMP+aOpV47YJM2Q7+iZKKh5R+T1N3GmpUaGRzgpy3iOmXG0hgT3ZLecBjRI6DKnVhWeiN2HIH4KkxZf8Ig8rrd0BfA6FlvUalFH4AQymVLTl//Tn7DN+RpOeuIaHHEGdEfuxMGdzJO5db59DXDxkxwJf+oXL96fBTaE2NEOVNip9/rPR3IhdoyUcri/ObAA3K1vRt/fkyd5s1EuarIkCYJH5qFyvM7e+nfGdHfsSlXsXglcY/66UIYU/tKCa/WPWGbUE34E9EdivbPQ9ZV8XiM='
+      secure: aYXJzDL1kOVMGmCPPV8XaXy9kTAaTzoFHRSN12he6xr15H97FTL311xxzW7WlvJ7x0ySzTwOvta/PDrtFw9OIqt4V/zqWT8pwGeA8rt0hZi0ZT+WBOwAdi8ulXfreJW8IW4Ghs7CI5G4n7sMGVbyGEsux0rRyxU/B8DShFm2ti/i3/DIwECT1O/cK2+crqOw1UGdk/FyaPhvLeWBjKbfldLJ7MUhfR0w8sxhKRHig/1HLCHWafLVkbcS9LYWIoRGApkHugIKAp6aM/PnDFtTKcD4lHVeG05Dnl9bCeBjU9/D+459qa7juACSeZuELJ6MKrg/19YAvCBXz5QmYrKvAmHwHJ2ce0Sst5ekbx1yUhz23YlISIVj6TEkLOqMNeMFkaGsyWjpjJBU5mracTrMUVMP+aOpV47YJM2Q7+iZKKh5R+T1N3GmpUaGRzgpy3iOmXG0hgT3ZLecBjRI6DKnVhWeiN2HIH4KkxZf8Ig8rrd0BfA6FlvUalFH4AQymVLTl//Tn7DN+RpOeuIaHHEGdEfuxMGdzJO5db59DXDxkxwJf+oXL96fBTaE2NEOVNip9/rPR3IhdoyUcri/ObAA3K1vRt/fkyd5s1EuarIkCYJH5qFyvM7e+nfGdHfsSlXsXglcY/66UIYU/tKCa/WPWGbUE34E9EdivbPQ9ZV8XiM=
