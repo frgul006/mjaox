@@ -21,7 +21,7 @@ install:
   - yarn
 
 script:
-  - $(npm bin)/print-env TRAVIS
+  - yarn build
   - ng e2e
 
 deploy:
