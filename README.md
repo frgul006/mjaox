@@ -46,4 +46,4 @@ See the LICENSE file for license rights and limitations (MIT).
 
 Cross-browser testing provided by:
 
-![Browserstack](https://raw.githubusercontent.com/frgul006/mjaox/develop/github/browserstack.png)
+[![Browserstack](https://raw.githubusercontent.com/frgul006/mjaox/develop/github/browserstack.png)](https://www.browserstack.com/)
