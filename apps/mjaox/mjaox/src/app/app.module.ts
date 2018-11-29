@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { GraphQLModule } from './graphql.module';
 import { PagesModule } from './pages';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { PagesModule } from './pages';
     SharedMjaoxUiFooterModule,
     PagesModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

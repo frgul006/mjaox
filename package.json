@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "dev": "lite-server --baseDir dist",
     "start": "ng serve",
     "build": "ng build --aot --prod --project mjaox-mjaox --output-path dist",
     "test": "ng test",
@@ -41,6 +42,7 @@
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@angular/pwa": "^0.11.0",
     "@angular/router": "^7.0.0",
+    "@angular/service-worker": "^7.0.0",
     "@ngrx/effects": "6.1.2",
     "@ngrx/router-store": "6.1.2",
     "@ngrx/store": "6.1.2",
@@ -69,6 +71,7 @@
     "@angular/cli": "7.1.0",
     "@angular/compiler-cli": "^7.0.0",
     "@angular/language-service": "^7.0.0",
+    "@firebase/app-types": "^0.3.2",
     "@ngrx/store-devtools": "6.1.2",
     "@nrwl/builders": "7.1.1",
     "@nrwl/schematics": "7.1.1",
@@ -78,7 +81,7 @@
     "codelyzer": "~4.5.0",
     "cypress": "^3.1.0",
     "jasmine-core": "~3.3.0",
-    "jasmine-marbles": "0.4.1",
+    "jasmine-marbles": "0.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "^23.0.0",
     "jest-preset-angular": "6.0.1",
@@ -87,11 +90,12 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "lite-server": "^2.4.0",
     "ngrx-store-freeze": "0.2.4",
     "prettier": "1.15.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.2.1"
+    "typescript": "~3.1.0"
   }
 }
