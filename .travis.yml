@@ -18,6 +18,7 @@ script:
   - ng e2e
   - yarn build
 deploy:
+  skip_cleanup: true
   provider: firebase
   token:
     secure: CdXF2ETpt2F08wN3BRPDPwBvHQ1kwKUmHwN9drRfB3wepnYie7uP+X8xvDP+s5w5ycx0YUSCvRU3il3MC8sNufqH1jd78xK6yY2W+eLT+icUwHN5FLn1WZmuWv4Zx/3K4fxFc34f8gOZIAy98r+U46Tq3UFZ9az/wzZVAY/Gd3miRAk8hmKd7GicBakg/SLIr0FzoRpEX88S7DApXzdibbyxEF/P8tFHabiIZTcJAq2VYOArvBqNpHvbTIbGI6S58BuEyTkZCKuwQkTatSmVRjojuI/E63TrIUvl2+nKtZMvI+14VB0v0CJcYkEbTtFNmEnlih4/eTDmy4+VFs8Wr3505jB6SqtWtEL42+iyMLSLuN03xRYYfgk6SFEetli87BJIa5yghu+JmtJmv5204wrwb5OyjudVEM3GRqmLCqMN+vgh76/Li3KHsMClpyCRhdYN3QXRFjga0/CB79cJFiUgArTSo++pU05Mj+nIAuwQHA2BCyUCjhGjV78LdcPD0582GNc6qxlegBAtrKuJxDM1HZDxgV6TGYgf8U+f0WAcAUf/BS7rn/DtlGugsJfpq+DRyMBHfIq8ZliDYJhNaeLtsnrtRyQ+nOwY+xKimA5BQG7X7mtb2WKe+4NVNe9N6mn3Exj7LbAzVBabSI21+N8nHBKe57KoBlE87FEK92o=
