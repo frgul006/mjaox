@@ -1,41 +1,32 @@
 dist: trusty
-
 sudo: false
-
 language: node_js
-
 node_js:
   - '10'
-
 branches:
   only:
     - develop
     - master
-
 cache:
   directories:
-    - ~/.npm
-    - ~/.cache
-
+    - '~/.npm'
+    - '~/.cache'
 install:
   - yarn
-
 script:
   - yarn build
   - ng e2e
-
 deploy:
   provider: firebase
   token:
-    secure: '$FIREBASE_TOKEN'
-
+    secure: CdXF2ETpt2F08wN3BRPDPwBvHQ1kwKUmHwN9drRfB3wepnYie7uP+X8xvDP+s5w5ycx0YUSCvRU3il3MC8sNufqH1jd78xK6yY2W+eLT+icUwHN5FLn1WZmuWv4Zx/3K4fxFc34f8gOZIAy98r+U46Tq3UFZ9az/wzZVAY/Gd3miRAk8hmKd7GicBakg/SLIr0FzoRpEX88S7DApXzdibbyxEF/P8tFHabiIZTcJAq2VYOArvBqNpHvbTIbGI6S58BuEyTkZCKuwQkTatSmVRjojuI/E63TrIUvl2+nKtZMvI+14VB0v0CJcYkEbTtFNmEnlih4/eTDmy4+VFs8Wr3505jB6SqtWtEL42+iyMLSLuN03xRYYfgk6SFEetli87BJIa5yghu+JmtJmv5204wrwb5OyjudVEM3GRqmLCqMN+vgh76/Li3KHsMClpyCRhdYN3QXRFjga0/CB79cJFiUgArTSo++pU05Mj+nIAuwQHA2BCyUCjhGjV78LdcPD0582GNc6qxlegBAtrKuJxDM1HZDxgV6TGYgf8U+f0WAcAUf/BS7rn/DtlGugsJfpq+DRyMBHfIq8ZliDYJhNaeLtsnrtRyQ+nOwY+xKimA5BQG7X7mtb2WKe+4NVNe9N6mn3Exj7LbAzVBabSI21+N8nHBKe57KoBlE87FEK92o=
+  message: 'Deployed from Travis'
 notifications:
   email:
     on_failure: change
     on_success: change
-
 addons:
   browserstack:
-    username: 'fredrikgullberg2'
+    username: fredrikgullberg2
     access_key:
       secure: aYXJzDL1kOVMGmCPPV8XaXy9kTAaTzoFHRSN12he6xr15H97FTL311xxzW7WlvJ7x0ySzTwOvta/PDrtFw9OIqt4V/zqWT8pwGeA8rt0hZi0ZT+WBOwAdi8ulXfreJW8IW4Ghs7CI5G4n7sMGVbyGEsux0rRyxU/B8DShFm2ti/i3/DIwECT1O/cK2+crqOw1UGdk/FyaPhvLeWBjKbfldLJ7MUhfR0w8sxhKRHig/1HLCHWafLVkbcS9LYWIoRGApkHugIKAp6aM/PnDFtTKcD4lHVeG05Dnl9bCeBjU9/D+459qa7juACSeZuELJ6MKrg/19YAvCBXz5QmYrKvAmHwHJ2ce0Sst5ekbx1yUhz23YlISIVj6TEkLOqMNeMFkaGsyWjpjJBU5mracTrMUVMP+aOpV47YJM2Q7+iZKKh5R+T1N3GmpUaGRzgpy3iOmXG0hgT3ZLecBjRI6DKnVhWeiN2HIH4KkxZf8Ig8rrd0BfA6FlvUalFH4AQymVLTl//Tn7DN+RpOeuIaHHEGdEfuxMGdzJO5db59DXDxkxwJf+oXL96fBTaE2NEOVNip9/rPR3IhdoyUcri/ObAA3K1vRt/fkyd5s1EuarIkCYJH5qFyvM7e+nfGdHfsSlXsXglcY/66UIYU/tKCa/WPWGbUE34E9EdivbPQ9ZV8XiM=
