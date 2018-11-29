@@ -14,8 +14,9 @@ cache:
 install:
   - yarn
 script:
-  - yarn build
+  - ng test
   - ng e2e
+  - yarn build
 deploy:
   provider: firebase
   token:

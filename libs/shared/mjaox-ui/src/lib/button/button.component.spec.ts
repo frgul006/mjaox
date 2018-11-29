@@ -11,9 +11,8 @@ describe('ButtonComponent', () => {
     TestBed.configureTestingModule({
       imports: [MatButtonModule, MatIconModule],
 
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

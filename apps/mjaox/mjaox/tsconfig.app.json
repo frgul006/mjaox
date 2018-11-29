@@ -4,10 +4,6 @@
     "outDir": "../../../dist/out-tsc/apps/mjaox/mjaox",
     "types": []
   },
-  "exclude": [
-    "**/*.spec.ts"
-  ],
-  "include": [
-    "**/*.ts"
-  ]
+  "exclude": ["**/*.spec.ts"],
+  "include": ["**/*.ts"]
 }

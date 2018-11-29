@@ -8,7 +8,6 @@ import {
 import { Apollo } from 'apollo-angular';
 
 describe('GraphCMSService', () => {
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
@@ -18,7 +17,6 @@ describe('GraphCMSService', () => {
         }
       ]
     });
-
   });
 
   it('should be created', () => {

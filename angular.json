@@ -24,7 +24,8 @@
             "tsConfig": "apps/mjaox/mjaox/tsconfig.app.json",
             "assets": [
               "apps/mjaox/mjaox/src/favicon.ico",
-              "apps/mjaox/mjaox/src/assets"
+              "apps/mjaox/mjaox/src/assets",
+              "apps/mjaox/mjaox/src/manifest.json"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -63,7 +64,8 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true
             }
           }
         },
@@ -99,7 +101,7 @@
           "options": {
             "jestConfig": "apps/mjaox/mjaox/jest.config.js",
             "tsConfig": "apps/mjaox/mjaox/tsconfig.spec.json",
-            "setupFile": "jest/setupJest.ts"
+            "setupFile": "../jest/setupJest.ts"
           }
         }
       }
@@ -152,7 +154,7 @@
           "options": {
             "jestConfig": "libs/shared/mjaox-ui/jest.config.js",
             "tsConfig": "libs/shared/mjaox-ui/tsconfig.spec.json",
-            "setupFile": "jest/setupJest.ts"
+            "setupFile": "../jest/setupJest.ts"
           }
         }
       }
@@ -177,7 +179,8 @@
           "builder": "@nrwl/builders:jest",
           "options": {
             "jestConfig": "libs/shared/mjaox-model/jest.config.js",
-            "tsConfig": "libs/shared/mjaox-model/tsconfig.spec.json"
+            "tsConfig": "libs/shared/mjaox-model/tsconfig.spec.json",
+            "setupFile": "../jest/setupJest.ts"
           }
         }
       }
