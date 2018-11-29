@@ -1,27 +1,27 @@
-<div class="row">
-  <div class="col">
-    <h1>{{ (post$ | async)?.title }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-7">
-    <markdown [data]="(post$ | async)?.content"></markdown>
-  </div>
-  <div class="offset-md-1 col-md-4">
-    <div class="mt-2 mb-4">
-      <h2>Tags</h2>
-      <mjaox-ui-tags [tags]="(post$ | async)?.tags"></mjaox-ui-tags>
-    </div>
-    <div class="mt-2 mb-4">
-      <h2>Uploads</h2>
-      <mjaox-ui-uploads [uploads]="(post$ | async)?.uploads"></mjaox-ui-uploads>
-    </div>
-    <div class="mt-2 mb-4">
-      <h2>Links</h2>
-      <mjaox-ui-links [links]="(post$ | async)?.links"></mjaox-ui-links>
-    </div>
-    <div class="mt-5 mb-5">
-      <mjaox-ui-author [author]="(post$ | async)?.author"></mjaox-ui-author>
+<ng-container *ngIf="(post$ | async) as post">
+  <div class="row">
+    <div class="col">
+      <h1>{{ post?.title }}</h1>
     </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col-md-7"><markdown [data]="post?.content"></markdown></div>
+    <div class="offset-md-1 col-md-4">
+      <div class="mt-2 mb-4" *ngIf="post?.tags?.length > 0">
+        <h2>Tags</h2>
+        <mjaox-ui-tags [tags]="post?.tags"></mjaox-ui-tags>
+      </div>
+      <div class="mt-2 mb-4" *ngIf="post?.uploads?.length > 0">
+        <h2>Uploads</h2>
+        <mjaox-ui-uploads [uploads]="post?.uploads"></mjaox-ui-uploads>
+      </div>
+      <div class="mt-2 mb-4" *ngIf="post?.links?.length > 0">
+        <h2>Links</h2>
+        <mjaox-ui-links [links]="post?.links"></mjaox-ui-links>
+      </div>
+      <div class="mt-5 mb-5">
+        <mjaox-ui-author [author]="post?.author"></mjaox-ui-author>
+      </div>
+    </div>
+  </div>
+</ng-container>
