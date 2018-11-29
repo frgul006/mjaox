@@ -99,7 +99,7 @@
           "options": {
             "jestConfig": "apps/mjaox/mjaox/jest.config.js",
             "tsConfig": "apps/mjaox/mjaox/tsconfig.spec.json",
-            "setupFile": "jest/setupJest.ts"
+            "setupFile": "../jest/setupJest.ts"
           }
         }
       }
