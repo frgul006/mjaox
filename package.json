@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
-    "check": "yarn affected:lint origin/develop HEAD && yarn affected:test origin/develop HEAD && yarn affected:build origin/develop HEAD && yarn affected:e2e origin/develop HEAD",
+    "check": "yarn affected:lint --base=origin/develop --head=HEAD --parallel && yarn affected:test --base=origin/develop --head=HEAD  --parallel && yarn affected:build --base=origin/develop --head=HEAD  --parallel && yarn affected:e2e --base=origin/develop --head=HEAD",
     "affected:apps": "./node_modules/.bin/nx affected:apps",
     "affected:libs": "./node_modules/.bin/nx affected:libs",
     "affected:build": "./node_modules/.bin/nx affected:build",
