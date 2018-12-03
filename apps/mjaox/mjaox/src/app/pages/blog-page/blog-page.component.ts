@@ -23,7 +23,7 @@ import { GraphCMSService } from '../../services/graphcms.service';
 
         query(
           ':enter',
-          stagger('-120ms', [
+          stagger('120ms', [
             animate(
               '240ms ease-in',
               keyframes([

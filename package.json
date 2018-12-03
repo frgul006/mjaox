@@ -7,7 +7,7 @@
     "dev": "lite-server --baseDir dist",
     "start": "ng serve",
     "build": "ng build --aot --prod --project mjaox-mjaox --output-path dist",
-    "test": "ng test",
+    "test": "jest",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
     "check": "yarn affected:lint origin/develop HEAD && yarn affected:test origin/develop HEAD && yarn affected:build origin/develop HEAD && yarn affected:e2e origin/develop HEAD",

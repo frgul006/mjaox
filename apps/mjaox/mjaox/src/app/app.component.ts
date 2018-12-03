@@ -14,11 +14,11 @@ export class AppComponent {
   constructor() {
     this.toolbarOptions = {
       links: [
-        {
-          icon: 'code',
-          label: 'Blog',
-          route: ''
-        } as MjaoxToolbarLink
+        // {
+        //   icon: 'code',
+        //   label: 'Blog',
+        //   route: ''
+        // } as MjaoxToolbarLink
       ]
     };
   }
