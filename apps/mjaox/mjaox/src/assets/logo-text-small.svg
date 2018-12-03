@@ -1,5 +1,5 @@
 
-<svg width="324px" height="19px" viewBox="0 0 324 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="77px" height="19px" viewBox="0 0 77 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
             <stop stop-color="#FFFFFF" stop-opacity="0.8" offset="0%"></stop>
@@ -32,8 +32,8 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Aldrich-Regular, Aldrich" font-size="20" font-weight="normal" line-spacing="28">
         <g id="app-bar" filter="url(#filter-3)" transform="translate(-103.000000, -43.000000)" fill="#FFFFFF">
             <g id="Logo" transform="translate(23.000000, 15.000000)">
-                <text id="MJAOX-DEVELOPMENT-ST">
-                    <tspan x="81" y="42">MJAOX DEVELOPMENT STUDIO</tspan>
+                <text id="MJAOX">
+                    <tspan x="81" y="42">MJAOX </tspan>
                 </text>
             </g>
         </g>

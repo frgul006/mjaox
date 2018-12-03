@@ -1,5 +1,16 @@
 <mat-card class="mjaox-ui-author">
   <mat-card-header>
+    <div mat-card-avatar class="mjaox-ui-author__avatar d-block d-md-none">
+      <img
+        *ngIf="author?.profileimage?.handle"
+        mat-card-image
+        [src]="
+          'https://media.graphcms.com/resize=w:500/quality=value:70/compress/' +
+          author?.profileimage?.handle
+        "
+        [alt]="'Photo of ' + author?.firstname + ' ' + author?.lastname"
+      />
+    </div>
     <mat-card-title>{{
       author?.firstname + ' ' + author?.lastname
     }}</mat-card-title>
@@ -20,6 +31,7 @@
   </mat-card-header>
   <img
     *ngIf="author?.profileimage?.handle"
+    class="d-none d-md-block"
     mat-card-image
     [src]="
       'https://media.graphcms.com/resize=w:500/quality=value:70/compress/' +
